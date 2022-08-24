@@ -275,7 +275,7 @@ class ShrinkageLinearDiscriminantAnalysis(
             Vector containing the class labels for each sample.
         """
         scores = self.decision_function(X)
-        if len(scores.shape) == 1:
+        if scores.size == 1:
             indices = (scores > 0).astype(int)
         else:
             indices = scores.argmax(axis=1)
